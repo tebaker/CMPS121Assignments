@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void configAddEventButton() {
-        Button addEventButton = (Button) findViewById(R.id.addEventBotton);
+        Button addEventButton = (Button) findViewById(R.id.addEventButton);
         addEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
