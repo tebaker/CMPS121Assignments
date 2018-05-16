@@ -9,6 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -64,7 +69,14 @@ public class AddEventActivity extends AppCompatActivity {
                                            Integer.toString(mDay) +  "/" +
                                            Integer.toString(year);
 
-                System.out.println("Date: " )
+                System.out.println("Title: " + titleTextString);
+                System.out.println("Event: " + eventTextString);
+                System.out.println("Time: " + currentTimeString);
+                System.out.println("Date: " + currentDateString);
+
+
+                // finishing and moving back to home screen
+                finish();
 
                 // getting instance of location
 //                LocationManager locManager;

@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="81dp">
-
-    <Button
-        android:id="@+id/addEventButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="ADD EVENT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    tools:context=".MainActivity">
 
     <ListView
         android:id="@+id/data_list_view"
         android:layout_height="match_parent"
         android:layout_width="match_parent">
+
     </ListView>
+    <TextView
+        android:id="@+id/text"
+        android:text="Nothing to show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="20dp"/>
+
 </android.support.constraint.ConstraintLayout>
