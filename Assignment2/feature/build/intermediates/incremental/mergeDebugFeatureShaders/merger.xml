@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/chrx/CMPS121Assignments/Assignment2/feature/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/chrx/CMPS121Assignments/Assignment2/feature/src/debug/shaders"/></dataSet></merger>

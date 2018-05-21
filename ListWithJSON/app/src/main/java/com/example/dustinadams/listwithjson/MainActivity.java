@@ -1,10 +1,19 @@
 package com.example.dustinadams.listwithjson;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,23 +25,59 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
+
+    private final String TAG = "TESTGPS";
+    public static TextView latText;
+    public static TextView longText;
+
+    Location l;
 
     public JSONObject jos = null;
     public JSONArray ja = null;
-    private static final String TAG = "JSON_LIST";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // References for the widgets
+//        latText = findViewById(R.id.latitude);
+//        longText = findViewById(R.id.longitude);
 
+        // This statement requests permission to the user.
+        // If permissions are not set in the Manifest file, then access
+        // will automatically be denied. Once the user chooses an option,
+        // onRequestPermissionsResult is called.
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                99);
+
+        Button b = findViewById(R.id.button);
+        b.setOnClickListener(new Button.OnClickListener(){
+            @SuppressLint("MissingPermission")
+            public void onClick(View view){
+                // A reference to the location manager. The LocationManager has already
+                // been set up in MyService, we're just getting a reference here.
+                LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                List<String> providers = lm.getProviders(true);
+                // Go through the location providers starting with GPS, stop as soon
+                // as we find one.
+                for (int i=providers.size()-1; i>=0; i--) {
+                    l = lm.getLastKnownLocation(providers.get(i));
+                    longText.setText(Double.toString(l.getLongitude()));
+                    latText.setText(Double.toString(l.getLatitude()));
+                    if (l != null) break;
+                }
+            }
+        });
     }
     protected void onResume(){
         super.onResume();
@@ -79,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     ld.firstText = ja.getJSONObject(i).getString("first");
                     ld.secondText = ja.getJSONObject(i).getString("second");
+                    ld.thirdText = ja.getJSONObject(i).getString("third");
                 } catch (JSONException e1) {
                     e1.printStackTrace();
                 }
@@ -115,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
                     // pass some key value pairs to the next Activity (via the Intent)
                     detailIntent.putExtra("first", selected.firstText);
                     detailIntent.putExtra("second", selected.secondText);
+                    detailIntent.putExtra("gpsData", String.valueOf(Double.toString(l.getLongitude()) + Double.toString(l.getLatitude())));
+
 
                     startActivity(detailIntent);
                 }
@@ -164,5 +212,55 @@ public class MainActivity extends AppCompatActivity {
                 super.onOptionsItemSelected(item);
         }
         return true;
+    }
+    // This class implements OnRequestPermissionsResultCallback, so when the
+    // user is prompted for location permission, the below method is called
+    // as soon as the user chooses an option.
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        Log.d(TAG, "callback");
+        switch (requestCode) {
+            case 99:
+                // If the permissions aren't set, then return. Otherwise, proceed.
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
+                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION,
+                                        Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.INTERNET}
+                                , 10);
+                    }
+                    Log.d(TAG, "returning program");
+                    return;
+                }
+                else{
+                    // Create Intent to reference MyService, start the Service.
+                    Log.d(TAG, "starting service");
+                    Intent i = new Intent(this, DetailActivity.class);
+                    if(i==null)
+                        Log.d(TAG, "intent null");
+                    else{
+                        startService(i);
+                    }
+
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    // Used for debugging. Below method is extraneous
+    @SuppressLint("MissingPermission")
+    public void doSomething(View view){
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        List<String> providers = lm.getProviders(true);
+        Location l;
+        for (int i=providers.size()-1; i>=0; i--) {
+            l = lm.getLastKnownLocation(providers.get(i));
+            longText.setText(Double.toString(l.getLongitude()));
+            latText.setText(Double.toString(l.getLatitude()));
+            if (l != null) break;
+        }
     }
 }

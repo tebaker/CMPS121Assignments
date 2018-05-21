@@ -1,0 +1,167 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-61:12
+MERGED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/eb9503e907da555da23d43956e58d4ce/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/6eb6acf720ec4023706753c540488bc3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6d7579cb8759c91f9829c484378c54f0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/25d04834c6f648fc764e0a82e6dda7be/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/54a0efd55e534f232365d72421aac16f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/4c39f1d7022de8c2887dae850a5d67b5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/46819bccade01bb7482af5580823336f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/d754e4d72a51c64c7e854fda07dcb9f7/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/292dbac0dffcc74701cf51cf62dc93a0/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/50502d70465e6b1dc697a2f3ea1ba96d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/85090d867722adfe1b724910eadb347d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/1883df0503265c9d6a6db40f6e92bf17/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+	package
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:3:5-48
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:1-12:12
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:5:5-32
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-59:19
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:5-59:19
+MERGED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/eb9503e907da555da23d43956e58d4ce/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/eb9503e907da555da23d43956e58d4ce/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:9-35
+	android:label
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:9-41
+	android:roundIcon
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:9-54
+	android:icon
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:13:9-43
+	android:allowBackup
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:9-40
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:8:5-79
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-79
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:8:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:9:22-64
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:10:5-81
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml:10:22-78
+uses-sdk
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/eb9503e907da555da23d43956e58d4ce/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/eb9503e907da555da23d43956e58d4ce/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/6eb6acf720ec4023706753c540488bc3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/6eb6acf720ec4023706753c540488bc3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6d7579cb8759c91f9829c484378c54f0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/6d7579cb8759c91f9829c484378c54f0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/25d04834c6f648fc764e0a82e6dda7be/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/25d04834c6f648fc764e0a82e6dda7be/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/54a0efd55e534f232365d72421aac16f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/54a0efd55e534f232365d72421aac16f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/4c39f1d7022de8c2887dae850a5d67b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/4c39f1d7022de8c2887dae850a5d67b5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/46819bccade01bb7482af5580823336f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/46819bccade01bb7482af5580823336f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/d754e4d72a51c64c7e854fda07dcb9f7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/chrx/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/d754e4d72a51c64c7e854fda07dcb9f7/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/292dbac0dffcc74701cf51cf62dc93a0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/292dbac0dffcc74701cf51cf62dc93a0/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/50502d70465e6b1dc697a2f3ea1ba96d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/50502d70465e6b1dc697a2f3ea1ba96d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/85090d867722adfe1b724910eadb347d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/85090d867722adfe1b724910eadb347d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/1883df0503265c9d6a6db40f6e92bf17/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/chrx/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/1883df0503265c9d6a6db40f6e92bf17/AndroidManifest.xml:20:5-44
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+		ADDED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+		INJECTED from /home/chrx/CMPS121Assignments/Assignment2/app/src/main/AndroidManifest.xml
+activity#com.example.talon.assignment2.feature.MainActivity
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:9-32:20
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:19-84
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:example.com+data:pathPattern:/.*+data:scheme:https
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:13-26:29
+	android:order
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:28-45
+action#android.intent.action.VIEW
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:17-69
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:17:25-66
+category#android.intent.category.BROWSABLE
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:17-78
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:27-75
+category#android.intent.category.DEFAULT
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:17-76
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:27-73
+data
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:22:17-25:46
+	android:host
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:23:21-47
+	android:scheme
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:21-43
+	android:pathPattern
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:24:21-46
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:27:13-31:29
+action#android.intent.action.MAIN
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:30:27-74
+activity#com.example.talon.assignment2.feature.AddEventActivity
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:9-45:20
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:33:19-88
+activity#com.example.talon.assignment2.feature.ViewEventActivity
+ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:46:9-58:20
+	android:name
+		ADDED from [:feature] /home/chrx/CMPS121Assignments/Assignment2/feature/build/intermediates/manifests/full/debug/AndroidManifest.xml:46:19-89
+meta-data#aia-compat-api-min-version
+ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:18:9-20:33
+	android:value
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:13-30
+	android:name
+		ADDED from [:base] /home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/manifests/full/debug/AndroidManifest.xml:19:13-54
