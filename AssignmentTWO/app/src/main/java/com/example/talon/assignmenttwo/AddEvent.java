@@ -71,18 +71,21 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
 
         final SimpleDateFormat time = new SimpleDateFormat("HH:mm:ss");
         String timeprint = time.format(calendar.getTime());
-        final EditText first = findViewById(R.id.editText);
-        final EditText second = findViewById(R.id.editText2);
+
+        // adding AM/PM whether or not it's after 12:00 or not
+
+        final EditText userEvent = findViewById(R.id.editText_title);
+        final EditText userDescription = findViewById(R.id.editText_description);
         String dateprint = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
 
 
 
 
-        TextView One = (TextView)findViewById(R.id.textView7);
-        TextView Two = (TextView)findViewById(R.id.textView8);
-        One.setText(dateprint);
-        Two.setText(timeprint);
-        Button b = findViewById(R.id.button);
+        TextView textViewTime = (TextView)findViewById(R.id.textView_showDate);
+        TextView textViewData = (TextView)findViewById(R.id.textView_showTime);
+        textViewTime.setText(dateprint);
+        textViewData.setText(timeprint);
+        Button enterNewEventButton = findViewById(R.id.button_addEvent);
 
         // Read the file
 
@@ -141,7 +144,7 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
             Toast.makeText(AddEvent.this, "Please Enable GPS First", Toast.LENGTH_LONG).show();
 
         }
-        b.setOnClickListener(new Button.OnClickListener(){
+        enterNewEventButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 /*CheckGpsStatus();
                 if(GpsStatus == true) {
@@ -162,8 +165,8 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
                     Toast.makeText(AddEvent.this, "Please Enable GPS First", Toast.LENGTH_LONG).show();
 
                 }*/
-                String firstText = first.getText().toString();
-                String secondText = second.getText().toString();
+                String userEventString = userEvent.getText().toString();
+                String userDescriptionString = userDescription.getText().toString();
                 //String formattedDate = date.format(calendar.getTime());
                 //String formattedTime = time.format(calendar.getTime());
                 String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
@@ -176,8 +179,8 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
                 //currentLoc = currentLoc + tempLoc;
                 JSONObject temp = new JSONObject();
                 try {
-                    temp.put("first", firstText);
-                    temp.put("second", secondText);
+                    temp.put("userEnteredTitle", userEventString);
+                    temp.put("userEnteredDescription", userDescriptionString);
                     temp.put("date", currentDate);
                     temp.put("time", currentTime);
                     temp.put("gps", currentLoc);

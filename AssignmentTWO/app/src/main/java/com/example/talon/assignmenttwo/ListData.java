@@ -1,11 +1,9 @@
 package com.example.talon.assignmenttwo;
 
 public class ListData {
-    public String firstText;
-    public String secondText;
+    public String userEnteredTitle;
+    public String userEnteredDescription;
     public String currentDate;
     public String currentTime;
     public String currentLoc;
-    public Integer test;
-    //public String formattedTime;
 }

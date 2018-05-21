@@ -1,5 +1,13 @@
 package com.example.talon.assignmenttwo;
-// Much of this code is borrowed with key functionalities added by me such as time, date, and gps readings and the ability to delete events
+
+/*************************************************************
+*
+* NOTE: I had help with this assignment. Part of this code
+*       is a modification of the professor's code, and part
+*       of it is help from other members of the class and
+*       members of my team.
+*
+**************************************************************/
 
 import android.Manifest;
 import android.content.Context;
@@ -33,25 +41,24 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
     public JSONObject jos = null;
     public JSONArray ja = null;
+
     private static final String TAG = "JSON_LIST";
     public static final int RequestPermissionCode = 1;
+
     Context context;
     LocationManager locationManager ;
     Location location;
     boolean GpsStatus = false;
     Criteria criteria ;
     String Holder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         EnableRuntimePermission();
-        //CheckGpsStatus();
-
-
     }
     protected void onResume(){
         super.onResume();
@@ -93,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
                 ListData ld = new ListData();
                 try {
-                    ld.firstText = ja.getJSONObject(i).getString("first");
-                    ld.secondText = ja.getJSONObject(i).getString("second");
+                    ld.userEnteredTitle = ja.getJSONObject(i).getString("userEnteredTitle");
+                    ld.userEnteredDescription = ja.getJSONObject(i).getString("userEnteredDescription");
                     ld.currentDate = ja.getJSONObject(i).getString("date");
                     ld.currentTime = ja.getJSONObject(i).getString("time");
                     ld.currentLoc = ja.getJSONObject(i).getString("gps");
@@ -113,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
             for(int i = 0; i < aList.size(); i++){
                 ListData listD = aList.get(i);
-                listItems[i] = listD.firstText;
+                listItems[i] = listD.userEnteredTitle;
             }
 
             // Show the list view with the each list item an element from listItems
@@ -136,13 +143,12 @@ public class MainActivity extends AppCompatActivity {
                     //String posHold = holder.toString();
 
                     // pass some key value pairs to the next Activity (via the Intent)
-                    detailIntent.putExtra("first", selected.firstText);
-                    detailIntent.putExtra("second", selected.secondText);
+                    detailIntent.putExtra("title", selected.userEnteredTitle);
+                    detailIntent.putExtra("description", selected.userEnteredDescription);
                     detailIntent.putExtra("date", selected.currentDate);
                     detailIntent.putExtra("time", selected.currentTime);
                     detailIntent.putExtra("gps", selected.currentLoc);
                     detailIntent.putExtra("test", position);
-                    //detailIntent.putExtra("test2", ja);
                     startActivity(detailIntent);
                 }
 
