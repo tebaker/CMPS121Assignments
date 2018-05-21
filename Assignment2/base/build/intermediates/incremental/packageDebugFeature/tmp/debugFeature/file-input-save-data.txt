@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Wed May 16 14:47:51 PDT 2018
-0.baseType=DIRECTORY
-0.base=/home/chrx/CMPS121Assignments/Assignment2/base/build/intermediates/transforms/dexMerger/feature/debug/0
-0.path=classes.dex
-0.set=DEX
-count=1
