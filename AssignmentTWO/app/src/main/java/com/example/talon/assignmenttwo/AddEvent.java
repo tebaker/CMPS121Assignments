@@ -1,6 +1,5 @@
 package com.example.talon.assignmenttwo;
 
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -31,14 +30,8 @@ import java.io.ObjectOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-
-//import android.icu.util.Calendar;
-//import java.text.DateFormat;
-
 
 public class AddEvent extends AppCompatActivity implements LocationListener {
-
     public JSONObject jo = null;
     public JSONArray ja = null;
     public static final int RequestPermissionCode = 1;
@@ -46,12 +39,11 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
     LocationManager locationManager ;
     Location location;
     boolean GpsStatus = false;
-    Criteria criteria ;
+    Criteria criteria;
     String Holder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // Start up the Location Service
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
         EnableRuntimePermission();
@@ -60,45 +52,25 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
         Holder = locationManager.getBestProvider(criteria, false);
         context = getApplicationContext();
         CheckGpsStatus();
-        //final String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
-        //String formattedDate = date.format(calendar.getTime());
-        final Date dateNow = Calendar.getInstance().getTime();
-        //final DateFormat currentDate = Calendar.getDateInstance(int style "M/d/yy");
         final Calendar calendar = Calendar.getInstance();
-        //System.out.println("Current time => "+calendar.getTime());
-        //final SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 
-
-        final SimpleDateFormat time = new SimpleDateFormat("HH:mm:ss");
-        String timeprint = time.format(calendar.getTime());
-
-        // adding AM/PM whether or not it's after 12:00 or not
+        final SimpleDateFormat time = new SimpleDateFormat("h:mm a");
+        String timePrint = time.format(calendar.getTime());
 
         final EditText userEvent = findViewById(R.id.editText_title);
         final EditText userDescription = findViewById(R.id.editText_description);
-        String dateprint = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        String datePrint = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
 
-
-
-
-        TextView textViewTime = (TextView)findViewById(R.id.textView_showDate);
-        TextView textViewData = (TextView)findViewById(R.id.textView_showTime);
-        textViewTime.setText(dateprint);
-        textViewData.setText(timeprint);
+        TextView textViewTime = findViewById(R.id.textView_showDate);
+        TextView textViewData = findViewById(R.id.textView_showTime);
+        textViewTime.setText(datePrint);
+        textViewData.setText(timePrint);
         Button enterNewEventButton = findViewById(R.id.button_addEvent);
-
-        // Read the file
-
 
         try{
             File f = new File(getFilesDir(), "file.ser");
             FileInputStream fi = new FileInputStream(f);
             ObjectInputStream o = new ObjectInputStream(fi);
-            // Notice here that we are de-serializing a String object (instead of
-            // a JSONObject object) and passing the String to the JSONObject’s
-            // constructor. That’s because String is serializable and
-            // JSONObject is not. To convert a JSONObject back to a String, simply
-            // call the JSONObject’s toString method.
             String j = null;
             try{
                 j = (String) o.readObject();
@@ -146,37 +118,12 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
         }
         enterNewEventButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
-                /*CheckGpsStatus();
-                if(GpsStatus == true) {
-                    if (Holder != null) {
-                        if (ActivityCompat.checkSelfPermission(
-                                AddEvent.this,
-                                Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                                &&
-                                ActivityCompat.checkSelfPermission(AddEvent.this, Manifest.permission.ACCESS_COARSE_LOCATION)
-                                        != PackageManager.PERMISSION_GRANTED) {
-                            return;
-                        }
-                        location = locationManager.getLastKnownLocation(Holder);
-                        locationManager.requestLocationUpdates(Holder, 12000, 7, AddEvent.this);
-                    }
-                }else {
-
-                    Toast.makeText(AddEvent.this, "Please Enable GPS First", Toast.LENGTH_LONG).show();
-
-                }*/
                 String userEventString = userEvent.getText().toString();
                 String userDescriptionString = userDescription.getText().toString();
-                //String formattedDate = date.format(calendar.getTime());
-                //String formattedTime = time.format(calendar.getTime());
                 String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
                 String currentTime = time.format(calendar.getTime());
-                //location = locationManager.getLastKnownLocation(Holder);
-                //locationManager.requestLocationUpdates(Holder, 12000, 7, AddEvent.this);
                 String currentLoc;
                 currentLoc = location.getLongitude() + ", " + location.getLatitude();
-                //String tempLoc = (" " + location.getLatitude()).toString();
-                //currentLoc = currentLoc + tempLoc;
                 JSONObject temp = new JSONObject();
                 try {
                     temp.put("userEnteredTitle", userEventString);
@@ -184,7 +131,6 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
                     temp.put("date", currentDate);
                     temp.put("time", currentTime);
                     temp.put("gps", currentLoc);
-
                 }
                 catch(JSONException j){
                     j.printStackTrace();
@@ -192,7 +138,6 @@ public class AddEvent extends AppCompatActivity implements LocationListener {
 
                 ja.put(temp);
 
-                // write the file
                 try{
                     File f = new File(getFilesDir(), "file.ser");
                     FileOutputStream fo = new FileOutputStream(f);

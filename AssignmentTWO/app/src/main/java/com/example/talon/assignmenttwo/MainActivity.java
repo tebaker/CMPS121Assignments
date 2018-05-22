@@ -48,11 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int RequestPermissionCode = 1;
 
     Context context;
-    LocationManager locationManager ;
-    Location location;
+    LocationManager locationManager;
     boolean GpsStatus = false;
-    Criteria criteria ;
-    String Holder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,11 +71,6 @@ public class MainActivity extends AppCompatActivity {
             File f = new File(getFilesDir(), "file.ser");
             FileInputStream fi = new FileInputStream(f);
             ObjectInputStream o = new ObjectInputStream(fi);
-            // Notice here that we are de-serializing a String object (instead of
-            // a JSONObject object) and passing the String to the JSONObject’s
-            // constructor. That’s because String is serializable and
-            // JSONObject is not. To convert a JSONObject back to a String, simply
-            // call the JSONObject’s toString method.
             String j = null;
             try{
                 j = (String) o.readObject();
@@ -136,11 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
                     ListData selected = aList.get(position);
 
-                    // Create an Intent to reference our new activity, then call startActivity
-                    // to transition into the new Activity.
                     Intent detailIntent = new Intent(context, ShowInfo.class);
-                    //int holder = position;
-                    //String posHold = holder.toString();
 
                     // pass some key value pairs to the next Activity (via the Intent)
                     detailIntent.putExtra("title", selected.userEnteredTitle);
@@ -151,13 +139,9 @@ public class MainActivity extends AppCompatActivity {
                     detailIntent.putExtra("test", position);
                     startActivity(detailIntent);
                 }
-
             });
         }
         catch(IOException e){
-            // There's no JSON file that exists, so don't
-            // show the list. But also don't worry about creating
-            // the file just yet, that takes place in AddText.
 
             //Here, disable the list view
             list.setEnabled(false);
@@ -188,9 +172,7 @@ public class MainActivity extends AppCompatActivity {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.action_favorite:
-                /*the R.id.action_favorite is the ID of our button (defined in strings.xml).
-                Change Activity here (if that's what you're intending to do, which is probably is).
-                 */
+
                 Intent i = new Intent(this, AddEvent.class);
                 startActivity(i);
             default:
@@ -200,13 +182,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void CheckGpsStatus(){
-
-        locationManager = (LocationManager)context.getSystemService(Context.LOCATION_SERVICE);
-
-        GpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-
-    }
     public void EnableRuntimePermission(){
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,

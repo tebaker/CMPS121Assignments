@@ -1,9 +1,5 @@
 package com.example.talon.assignmenttwo;
 
-
-//import android.support.v7.app.AppCompatActivity;
-//import android.os.Bundle;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,7 +25,7 @@ public class ShowInfo extends AppCompatActivity {
 
     public JSONObject jos = null;
     public JSONArray ja = null;
-    private static final String TAG = "JSON_LIST"; //may not use
+    private static final String TAG = "JSON_LIST";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,31 +33,24 @@ public class ShowInfo extends AppCompatActivity {
         setContentView(R.layout.actvity_show_info);
 
         final Intent i = getIntent();
-        String title = i.getStringExtra("first");
-        String description = i.getStringExtra("second");
+        String title = i.getStringExtra("title");
+        String description = i.getStringExtra("description");
         final String date = i.getStringExtra("date");
         final String time = i.getStringExtra("time");
         String location = i.getStringExtra("gps");
         final int posit = i.getIntExtra("test", 0);
-        //final int position = 1;//Integer.parseInt(posit);
-        //int test;
-        //i.getIntExtra("test", test);
-        TextView t = (TextView)findViewById(R.id.textView3);
-        TextView d = (TextView)findViewById(R.id.textView4);
-        TextView day = (TextView)findViewById(R.id.textDate);
-        TextView tim = (TextView)findViewById(R.id.textTime);
-        TextView loc = (TextView)findViewById(R.id.textLoc);
-        //int test = i.getIntExtra("test");
-        //int position;
-        t.setText(title);
-        d.setText(description);
+
+        TextView getTime = findViewById(R.id.textView3);
+        TextView getDes = findViewById(R.id.textView4);
+        TextView day = findViewById(R.id.textDate);
+        TextView tim = findViewById(R.id.textTime);
+        TextView loc = findViewById(R.id.textLoc);
+
+        getTime.setText(title);
+        getDes.setText(description);
         day.setText(date);
         tim.setText(time);
         loc.setText(location);
-
-
-
-
 
         Button delete = findViewById(R.id.button2);
         delete.setOnClickListener(new Button.OnClickListener() {
@@ -72,8 +61,6 @@ public class ShowInfo extends AppCompatActivity {
                     File f = new File(getFilesDir(), "file.ser");
                     FileInputStream fi = new FileInputStream(f);
                     ObjectInputStream o = new ObjectInputStream(fi);
-                    //FileOutputStream fo = new FileOutputStream(f);
-                    //ObjectOutputStream outPut = new ObjectOutputStream(fo);
                     String j = null;
                     try{
                         j = (String) o.readObject();
@@ -90,12 +77,6 @@ public class ShowInfo extends AppCompatActivity {
                     }
                     ja.remove(posit);
 
-
-                    //String J = jos.toString();
-                    //outPut.writeObject(J);
-
-                    //outPut.close();
-                    //fo.close();
                     fi.close();
                     o.close();
                 }
@@ -112,11 +93,9 @@ public class ShowInfo extends AppCompatActivity {
                     outPut.close();
                     fout.close();
                 }
-                catch(IOException expect){
-
+                catch(Exception e){
+                    e.printStackTrace();
                 }
-
-
 
                 Intent in = new Intent(ShowInfo.this, MainActivity.class);
                 in.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
